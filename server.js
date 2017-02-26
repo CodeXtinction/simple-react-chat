@@ -10,6 +10,8 @@ var app = express();
 var server = http.createServer(app);
 var websocket = io(server);
 
+app.use(express.static('./build'));
+
 server.listen(serverPort, ()=>{
     console.log(`server running at ${serverPort}`);
     if (process.env.LOCAL) {
